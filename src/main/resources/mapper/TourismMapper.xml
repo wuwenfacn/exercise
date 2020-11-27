@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.exercise.mapper.TourismMapper">
+  <resultMap id="BaseResultMap" type="com.example.exercise.entity.Tourism">
+    <!--@mbg.generated-->
+    <!--@Table tourism-->
+    <result column="tourism_id" property="tourismId" />
+    <result column="up_status" property="upStatus" />
+    <result column="type" property="type" />
+    <result column="attractions" property="attractions" />
+    <result column="circuit" property="circuit" />
+    <result column="expired_time" property="expiredTime" />
+    <result column="price" property="price" />
+    <result column="update_people" property="updatePeople" />
+    <result column="update_time" property="updateTime" />
+    <result column="label" property="label" />
+    <result column="fraction" property="fraction" />
+    <result column="access" property="access" />
+    <result column="delete_status" property="deleteStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    tourism_id, up_status, `type`, attractions, circuit, expired_time, price, update_people, 
+    update_time, `label`, fraction, `access`, delete_status
+  </sql>
+  <insert id="insert" parameterType="com.example.exercise.entity.Tourism">
+    <!--@mbg.generated-->
+    insert into tourism (tourism_id, up_status, `type`, attractions, circuit, expired_time, 
+      price, update_people, update_time, `label`, fraction, `access`, delete_status
+      )
+    values (#{tourismId}, #{upStatus}, #{type}, #{attractions}, #{circuit}, #{expiredTime}, 
+      #{price}, #{updatePeople}, #{updateTime}, #{label}, #{fraction}, #{access}, #{deleteStatus}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.exercise.entity.Tourism">
+    <!--@mbg.generated-->
+    insert into tourism
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tourismId != null">
+        tourism_id,
+      </if>
+      <if test="upStatus != null">
+        up_status,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="attractions != null">
+        attractions,
+      </if>
+      <if test="circuit != null">
+        circuit,
+      </if>
+      <if test="expiredTime != null">
+        expired_time,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="updatePeople != null">
+        update_people,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="label != null">
+        `label`,
+      </if>
+      <if test="fraction != null">
+        fraction,
+      </if>
+      <if test="access != null">
+        `access`,
+      </if>
+      <if test="deleteStatus != null">
+        delete_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tourismId != null">
+        #{tourismId},
+      </if>
+      <if test="upStatus != null">
+        #{upStatus},
+      </if>
+      <if test="type != null">
+        #{type},
+      </if>
+      <if test="attractions != null">
+        #{attractions},
+      </if>
+      <if test="circuit != null">
+        #{circuit},
+      </if>
+      <if test="expiredTime != null">
+        #{expiredTime},
+      </if>
+      <if test="price != null">
+        #{price},
+      </if>
+      <if test="updatePeople != null">
+        #{updatePeople},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime},
+      </if>
+      <if test="label != null">
+        #{label},
+      </if>
+      <if test="fraction != null">
+        #{fraction},
+      </if>
+      <if test="access != null">
+        #{access},
+      </if>
+      <if test="deleteStatus != null">
+        #{deleteStatus},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="selectList" resultMap="BaseResultMap">
+    select tourism_id, up_status, type, attractions, circuit, expired_time, price, update_people, update_time, label, fraction, access, delete_status
+    from tourism
+    where delete_status = 1;
+  </select>
+</mapper>
